@@ -1,0 +1,127 @@
+
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  .wrap{min-height:600px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem 1rem}
+  .logo{font-size:22px;font-weight:500;color:#3C3489;letter-spacing:-0.5px;margin-bottom:2rem}
+  .badge{font-size:12px;font-weight:500;color:#3C3489;background:#EEEDFE;border:0.5px solid #AFA9EC;padding:4px 14px;border-radius:999px;margin-bottom:1.25rem}
+  h1{font-size:28px;font-weight:500;color:var(--color-text-primary);text-align:center;line-height:1.3;margin-bottom:0.6rem;max-width:400px}
+  .sub{font-size:15px;color:var(--color-text-secondary);text-align:center;line-height:1.6;margin-bottom:2rem;max-width:340px}
+  .card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.75rem;width:100%;max-width:400px}
+  label{display:block;font-size:13px;color:var(--color-text-secondary);margin-bottom:5px}
+  .field{margin-bottom:1rem}
+  input[type=text],input[type=email]{width:100%;height:40px;padding:0 12px;font-size:14px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-secondary);color:var(--color-text-primary);outline:none}
+  input:focus{border-color:#7F77DD;box-shadow:0 0 0 3px #EEEDFE}
+  .btn{width:100%;height:40px;margin-top:0.25rem;background:#3C3489;color:#fff;border:none;border-radius:var(--border-radius-md);font-size:14px;font-weight:500;cursor:pointer;transition:opacity 0.15s}
+  .btn:hover{opacity:0.88}
+  .btn:active{opacity:0.7;transform:scale(0.99)}
+  .privacy{font-size:12px;color:var(--color-text-tertiary);text-align:center;margin-top:1rem}
+  .err{font-size:12px;color:var(--color-text-danger);margin-top:4px;display:none}
+  .success-wrap{display:none;flex-direction:column;align-items:center;padding:1.5rem;text-align:center}
+  .check-circle{width:48px;height:48px;border-radius:50%;background:#EEEDFE;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+  .check-circle svg{width:22px;height:22px;stroke:#534AB7;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  .success-wrap h2{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:0.5rem}
+  .success-wrap p{font-size:14px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:1.5rem}
+  .ref-box{background:#EEEDFE;border:0.5px solid #AFA9EC;border-radius:var(--border-radius-md);padding:0.9rem 1rem;width:100%;margin-bottom:0.75rem}
+  .ref-label{font-size:11px;color:#534AB7;margin-bottom:6px;font-weight:500;letter-spacing:0.04em}
+  .ref-row{display:flex;gap:8px;align-items:center}
+  .ref-link{font-size:13px;color:#3C3489;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .copy-btn{font-size:12px;font-weight:500;color:#534AB7;background:#fff;border:0.5px solid #AFA9EC;border-radius:var(--border-radius-md);padding:5px 12px;cursor:pointer;white-space:nowrap}
+  .copy-btn:hover{background:#EEEDFE}
+  .ref-note{font-size:12px;color:#534AB7;text-align:center}
+  .position-pill{display:inline-flex;align-items:center;gap:6px;background:#3C3489;color:#CECBF6;font-size:13px;font-weight:500;padding:6px 14px;border-radius:999px;margin-bottom:1.25rem}
+  .position-pill span{font-size:16px;font-weight:500;color:#fff}
+  .counter{font-size:13px;color:var(--color-text-tertiary);margin-top:2rem;text-align:center}
+  .counter b{color:var(--color-text-primary);font-weight:500}
+  .progress-wrap{width:100%;max-width:400px;margin-top:1rem}
+  .progress-bar{height:3px;background:var(--color-border-tertiary);border-radius:999px;overflow:hidden;margin-bottom:6px}
+  .progress-fill{height:100%;background:#534AB7;border-radius:999px;transition:width 0.6s ease}
+  .progress-label{display:flex;justify-content:space-between;font-size:11px;color:var(--color-text-tertiary)}
+</style>
+
+<h2 class="sr-only">Decidr waitlist — sign up for early access</h2>
+
+<div class="wrap">
+  <div class="logo">Decidr</div>
+  <span class="badge">Early access</span>
+  <h1>Decisions are better together</h1>
+  <p class="sub">Join the waitlist and get in before everyone else. Refer friends to move up the list.</p>
+
+  <div class="card" id="form-card">
+    <div class="field">
+      <label for="wl-name">Your name</label>
+      <input type="text" id="wl-name" placeholder="Jane Smith" />
+      <div class="err" id="name-err">Please enter your name.</div>
+    </div>
+    <div class="field">
+      <label for="wl-email">Email address</label>
+      <input type="email" id="wl-email" placeholder="jane@email.com" />
+      <div class="err" id="email-err">Please enter a valid email.</div>
+    </div>
+    <button class="btn" onclick="handleJoin()">Join Decidr</button>
+    <p class="privacy">No spam, ever. Unsubscribe anytime.</p>
+  </div>
+
+  <div class="card" id="success-card" style="display:none">
+    <div class="success-wrap" style="display:flex">
+      <div class="check-circle">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="position-pill">You're <span id="position-num">#143</span> on the list</div>
+      <h2>You're in!</h2>
+      <p>We'll email <strong id="confirm-email"></strong> when it's your turn. Refer friends to jump the queue.</p>
+      <div class="ref-box">
+        <div class="ref-label">Your referral link</div>
+        <div class="ref-row">
+          <span class="ref-link" id="ref-link">decidr.app/join?ref=abc123</span>
+          <button class="copy-btn" onclick="copyRef()">Copy</button>
+        </div>
+      </div>
+      <p class="ref-note">Each friend who joins moves you up 5 spots</p>
+    </div>
+  </div>
+
+  <div class="counter"><b id="count-num">142</b> people already on the waitlist</div>
+
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:28%"></div></div>
+    <div class="progress-label"><span>0</span><span>Goal: 500 signups</span></div>
+  </div>
+</div>
+
+<script>
+  let count = 142;
+
+  function randRef(){
+    return Math.random().toString(36).substring(2,9);
+  }
+
+  function handleJoin(){
+    const name = document.getElementById('wl-name').value.trim();
+    const email = document.getElementById('wl-email').value.trim();
+    const ne = document.getElementById('name-err');
+    const ee = document.getElementById('email-err');
+    let ok = true;
+    ne.style.display='none'; ee.style.display='none';
+    if(!name){ne.style.display='block';ok=false;}
+    if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ee.style.display='block';ok=false;}
+    if(!ok) return;
+
+    count++;
+    document.getElementById('count-num').textContent = count;
+    document.getElementById('confirm-email').textContent = email;
+    document.getElementById('position-num').textContent = '#' + count;
+    const ref = randRef();
+    document.getElementById('ref-link').textContent = 'decidr.app/join?ref=' + ref;
+    document.getElementById('prog-fill').style.width = Math.min(Math.round(count/500*100),100)+'%';
+    document.getElementById('form-card').style.display='none';
+    document.getElementById('success-card').style.display='block';
+  }
+
+  function copyRef(){
+    const txt = document.getElementById('ref-link').textContent;
+    navigator.clipboard.writeText(txt).catch(()=>{});
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent='Copied';
+    setTimeout(()=>btn.textContent='Copy', 2000);
+  }
+</script>
