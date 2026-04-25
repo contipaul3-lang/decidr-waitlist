@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
     :root {
       --purple-50: #EEEDFE;
       --purple-100: #CECBF6;
@@ -25,7 +25,7 @@
       --gray-300: #d4d2ca;
       --gray-500: #8a8880;
     }
-
+ 
     html, body {
       height: 100%;
       font-family: 'DM Sans', sans-serif;
@@ -33,7 +33,7 @@
       color: var(--white);
       -webkit-font-smoothing: antialiased;
     }
-
+ 
     body {
       min-height: 100vh;
       display: flex;
@@ -44,7 +44,7 @@
       position: relative;
       overflow-x: hidden;
     }
-
+ 
     /* Background grid */
     body::before {
       content: '';
@@ -57,7 +57,7 @@
       pointer-events: none;
       z-index: 0;
     }
-
+ 
     /* Purple glow */
     body::after {
       content: '';
@@ -71,7 +71,7 @@
       pointer-events: none;
       z-index: 0;
     }
-
+ 
     .page {
       position: relative;
       z-index: 1;
@@ -82,12 +82,12 @@
       max-width: 480px;
       animation: fadeUp 0.6s ease both;
     }
-
+ 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-
+ 
     .logo {
       font-family: 'Instrument Serif', serif;
       font-size: 36px;
@@ -95,12 +95,12 @@
       letter-spacing: -0.5px;
       margin-bottom: 2.5rem;
     }
-
+ 
     .logo em {
       font-style: italic;
       color: var(--purple-400);
     }
-
+ 
     .badge {
       font-size: 11px;
       font-weight: 500;
@@ -113,7 +113,7 @@
       border-radius: 999px;
       margin-bottom: 1.5rem;
     }
-
+ 
     h1 {
       font-family: 'Instrument Serif', serif;
       font-size: 42px;
@@ -124,12 +124,12 @@
       margin-bottom: 1rem;
       letter-spacing: -0.5px;
     }
-
+ 
     h1 em {
       font-style: italic;
       color: var(--purple-400);
     }
-
+ 
     .sub {
       font-size: 15px;
       font-weight: 300;
@@ -139,7 +139,7 @@
       margin-bottom: 2.5rem;
       max-width: 340px;
     }
-
+ 
     .card {
       background: rgba(255,255,255,0.03);
       border: 0.5px solid rgba(255,255,255,0.1);
@@ -148,9 +148,9 @@
       width: 100%;
       backdrop-filter: blur(12px);
     }
-
+ 
     .field { margin-bottom: 1.1rem; }
-
+ 
     label {
       display: block;
       font-size: 12px;
@@ -160,7 +160,7 @@
       color: var(--gray-500);
       margin-bottom: 7px;
     }
-
+ 
     input[type=text],
     input[type=email] {
       width: 100%;
@@ -175,14 +175,14 @@
       outline: none;
       transition: border-color 0.2s, background 0.2s;
     }
-
+ 
     input::placeholder { color: rgba(255,255,255,0.2); }
-
+ 
     input:focus {
       border-color: var(--purple-400);
       background: rgba(127,119,221,0.08);
     }
-
+ 
     .btn {
       width: 100%;
       height: 46px;
@@ -198,35 +198,35 @@
       transition: background 0.2s, transform 0.1s;
       letter-spacing: 0.01em;
     }
-
+ 
     .btn:hover { background: var(--purple-800); }
     .btn:active { transform: scale(0.99); }
     .btn:disabled { opacity: 0.6; cursor: not-allowed; }
-
+ 
     .privacy {
       font-size: 12px;
       color: var(--gray-500);
       text-align: center;
       margin-top: 1rem;
     }
-
+ 
     .err {
       font-size: 12px;
       color: #f09595;
       margin-top: 5px;
       display: none;
     }
-
+ 
     /* Success state */
     #success-card { display: none; }
-
+ 
     .success-inner {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
-
+ 
     .check-ring {
       width: 52px;
       height: 52px;
@@ -238,7 +238,7 @@
       justify-content: center;
       margin-bottom: 1.25rem;
     }
-
+ 
     .check-ring svg {
       width: 22px;
       height: 22px;
@@ -248,7 +248,7 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-
+ 
     .position-badge {
       display: inline-flex;
       align-items: center;
@@ -261,12 +261,12 @@
       color: var(--purple-200);
       margin-bottom: 1.25rem;
     }
-
+ 
     .position-badge strong {
       color: #fff;
       font-size: 15px;
     }
-
+ 
     .success-inner h2 {
       font-family: 'Instrument Serif', serif;
       font-size: 26px;
@@ -274,7 +274,7 @@
       color: var(--white);
       margin-bottom: 0.5rem;
     }
-
+ 
     .success-inner p {
       font-size: 14px;
       font-weight: 300;
@@ -282,7 +282,7 @@
       line-height: 1.6;
       margin-bottom: 1.75rem;
     }
-
+ 
     .ref-box {
       background: rgba(127,119,221,0.1);
       border: 0.5px solid rgba(127,119,221,0.3);
@@ -291,7 +291,7 @@
       width: 100%;
       margin-bottom: 0.75rem;
     }
-
+ 
     .ref-label {
       font-size: 10px;
       font-weight: 500;
@@ -300,13 +300,13 @@
       color: var(--purple-400);
       margin-bottom: 8px;
     }
-
+ 
     .ref-row {
       display: flex;
       gap: 10px;
       align-items: center;
     }
-
+ 
     .ref-link {
       font-size: 13px;
       color: var(--purple-200);
@@ -316,7 +316,7 @@
       text-overflow: ellipsis;
       font-family: 'DM Sans', sans-serif;
     }
-
+ 
     .copy-btn {
       font-size: 12px;
       font-weight: 500;
@@ -330,14 +330,14 @@
       white-space: nowrap;
       transition: background 0.15s;
     }
-
+ 
     .copy-btn:hover { background: rgba(127,119,221,0.25); }
-
+ 
     .ref-note {
       font-size: 12px;
       color: var(--gray-500);
     }
-
+ 
     /* Counter + progress */
     .bottom {
       margin-top: 2rem;
@@ -347,14 +347,14 @@
       align-items: center;
       gap: 10px;
     }
-
+ 
     .counter {
       font-size: 13px;
       color: var(--gray-500);
     }
-
+ 
     .counter b { color: var(--white); font-weight: 500; }
-
+ 
     .progress-bar {
       width: 100%;
       height: 2px;
@@ -362,14 +362,14 @@
       border-radius: 999px;
       overflow: hidden;
     }
-
+ 
     .progress-fill {
       height: 100%;
       background: var(--purple-400);
       border-radius: 999px;
       transition: width 0.8s cubic-bezier(0.16,1,0.3,1);
     }
-
+ 
     .progress-labels {
       display: flex;
       justify-content: space-between;
@@ -377,7 +377,7 @@
       font-size: 11px;
       color: var(--gray-500);
     }
-
+ 
     @media (max-width: 480px) {
       h1 { font-size: 32px; }
       .card { padding: 1.5rem; }
@@ -390,7 +390,7 @@
     <span class="badge">Early access</span>
     <h1>Decisions are <em>better</em> together</h1>
     <p class="sub">Join the waitlist and get in before everyone else. Refer friends to move up the list.</p>
-
+ 
     <div class="card" id="form-card">
       <div class="field">
         <label for="wl-name">Your name</label>
@@ -405,7 +405,7 @@
       <button class="btn" id="join-btn" onclick="handleJoin()">Join Decidr</button>
       <p class="privacy">No spam, ever. Unsubscribe anytime.</p>
     </div>
-
+ 
     <div class="card" id="success-card">
       <div class="success-inner">
         <div class="check-ring">
@@ -424,7 +424,7 @@
         <p class="ref-note">Each friend who joins moves you up 5 spots</p>
       </div>
     </div>
-
+ 
     <div class="bottom">
       <p class="counter"><b id="count-num">142</b> people already on the waitlist</p>
       <div class="progress-bar">
@@ -436,14 +436,14 @@
       </div>
     </div>
   </div>
-
+ 
   <script>
     let count = 142;
-
+ 
     function randRef() {
       return Math.random().toString(36).substring(2, 9);
     }
-
+ 
     async function handleJoin() {
       const name = document.getElementById('wl-name').value.trim();
       const email = document.getElementById('wl-email').value.trim();
@@ -451,28 +451,28 @@
       const ee = document.getElementById('email-err');
       const btn = document.getElementById('join-btn');
       let ok = true;
-
+ 
       ne.style.display = 'none';
       ee.style.display = 'none';
-
+ 
       if (!name) { ne.style.display = 'block'; ok = false; }
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { ee.style.display = 'block'; ok = false; }
       if (!ok) return;
-
+ 
       btn.textContent = 'Joining...';
       btn.disabled = true;
-
+ 
       try {
         const res = await fetch('https://formspree.io/f/meevdgad', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify({ name, email })
         });
-
+ 
         if (!res.ok) throw new Error('Formspree error');
-
+ 
         showSuccess(email);
-
+ 
       } catch (e) {
         btn.textContent = 'Join Decidr';
         btn.disabled = false;
@@ -480,26 +480,26 @@
         ee.style.display = 'block';
       }
     }
-
+ 
     function showSuccess(email) {
       count++;
       document.getElementById('count-num').textContent = count;
       document.getElementById('confirm-email').textContent = email;
       document.getElementById('position-num').textContent = '#' + count;
-
+ 
       const ref = randRef();
       const refUrl = 'https://decidr.app/join?ref=' + ref;
       document.getElementById('ref-link').textContent = refUrl;
-
+ 
       const pct = Math.min(Math.round(count / 500 * 100), 100);
       document.getElementById('prog-fill').style.width = pct + '%';
-
+ 
       document.getElementById('form-card').style.display = 'none';
       const sc = document.getElementById('success-card');
       sc.style.display = 'block';
       sc.style.animation = 'fadeUp 0.4s ease both';
     }
-
+ 
     function copyRef() {
       const txt = document.getElementById('ref-link').textContent;
       navigator.clipboard.writeText(txt).catch(() => {});
