@@ -88,17 +88,23 @@
       to   { opacity: 1; transform: translateY(0); }
     }
  
+    .logo-icon {
+      margin-bottom: 1rem;
+    }
+ 
     .logo {
-      font-family: 'Instrument Serif', serif;
+      font-family: 'DM Sans', sans-serif;
       font-size: 36px;
+      font-weight: 700;
       color: var(--white);
-      letter-spacing: -0.5px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       margin-bottom: 2.5rem;
     }
  
     .logo em {
-      font-style: italic;
-      color: var(--purple-400);
+      font-style: normal;
+      color: var(--white);
     }
  
     .badge {
@@ -348,6 +354,20 @@
 </head>
 <body>
   <div class="page">
+    <div class="logo-icon">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer glow circle -->
+        <circle cx="32" cy="32" r="30" stroke="rgba(255,255,255,0.08)" stroke-width="6"/>
+        <!-- Main white ring -->
+        <circle cx="32" cy="32" r="22" stroke="white" stroke-width="3"/>
+        <!-- Purple line from center to top dot -->
+        <line x1="32" y1="32" x2="32" y2="12" stroke="#7F3FE0" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- White center dot -->
+        <circle cx="32" cy="32" r="3.5" fill="white"/>
+        <!-- Purple top dot -->
+        <circle cx="32" cy="12" r="5.5" fill="#7F3FE0"/>
+      </svg>
+    </div>
     <div class="logo">Decid<em>r</em></div>
     <span class="badge">Early access</span>
     <h1>Decisions are <em>better</em> together</h1>
@@ -457,3 +477,4 @@
   </script>
 </body>
 </html>
+ 
