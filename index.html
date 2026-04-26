@@ -338,45 +338,7 @@
       color: var(--gray-500);
     }
  
-    /* Counter + progress */
-    .bottom {
-      margin-top: 2rem;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
  
-    .counter {
-      font-size: 13px;
-      color: var(--gray-500);
-    }
- 
-    .counter b { color: var(--white); font-weight: 500; }
- 
-    .progress-bar {
-      width: 100%;
-      height: 2px;
-      background: rgba(255,255,255,0.07);
-      border-radius: 999px;
-      overflow: hidden;
-    }
- 
-    .progress-fill {
-      height: 100%;
-      background: var(--purple-400);
-      border-radius: 999px;
-      transition: width 0.8s cubic-bezier(0.16,1,0.3,1);
-    }
- 
-    .progress-labels {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      font-size: 11px;
-      color: var(--gray-500);
-    }
  
     @media (max-width: 480px) {
       h1 { font-size: 32px; }
@@ -425,20 +387,10 @@
       </div>
     </div>
  
-    <div class="bottom">
-      <p class="counter"><b id="count-num">142</b> people already on the waitlist</p>
-      <div class="progress-bar">
-        <div class="progress-fill" id="prog-fill" style="width: 28%"></div>
-      </div>
-      <div class="progress-labels">
-        <span>0</span>
-        <span>Goal: 500 signups</span>
-      </div>
-    </div>
+ 
   </div>
  
   <script>
-    let count = 142;
  
     function randRef() {
       return Math.random().toString(36).substring(2, 9);
@@ -482,17 +434,12 @@
     }
  
     function showSuccess(email) {
-      count++;
-      document.getElementById('count-num').textContent = count;
       document.getElementById('confirm-email').textContent = email;
       document.getElementById('position-num').textContent = '#' + count;
  
       const ref = randRef();
       const refUrl = 'https://decidr.app/join?ref=' + ref;
       document.getElementById('ref-link').textContent = refUrl;
- 
-      const pct = Math.min(Math.round(count / 500 * 100), 100);
-      document.getElementById('prog-fill').style.width = pct + '%';
  
       document.getElementById('form-card').style.display = 'none';
       const sc = document.getElementById('success-card');
